@@ -5,3 +5,10 @@ Este é um programa executavel em desenvolvimento com interface que faz download
 ![Cacpturar](https://user-images.githubusercontent.com/85796309/126051827-93578b8f-fc7d-4064-86ba-5e63bf45f7e3.PNG)
 
 
+
+# Instalação
+
+
+- pip install PyQt5
+- pip instal pyqt5 -tools
+- pip install pyinstaller
