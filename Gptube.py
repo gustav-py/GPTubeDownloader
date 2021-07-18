@@ -96,10 +96,7 @@ def playlist_download():
 
 def novo_download():
     inicial.lineEdit.setText("")
-    # FAZ O PYQT FUNCIONAR
-
-# FAZ O PYQT FUNCIONAR
-# FAZ O PYQT FUNCIONAR
+   
 
 app = QtWidgets.QApplication([])  # FAZ O PYQT FUNCIONAR
 
