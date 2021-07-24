@@ -53,8 +53,8 @@ def video_download():
             messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
         else:
             messagebox.showerror("Aviso"," A URL ESTA INVALIDA!")
-
     
+
 def audio_download():
     try:
         url_audio = inicial.lineEdit.text()  # recebe o inpu do usuario que ira informar A URL
