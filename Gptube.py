@@ -1,3 +1,4 @@
+from logging import exception
 from sqlite3.dbapi2 import Cursor
 import time
 from PyQt5 import uic, QtWidgets
@@ -30,29 +31,46 @@ root.wm_withdraw()
     
 def video_download():
     inicial.show()
-   
+    
 
     
-    try:
+    #try:
         
-        url = inicial.lineEdit.text()  
-        yt = pytube.YouTube(url)  
-        video = yt.streams.first()
-        home = os.path.expanduser('~')
+    url = inicial.lineEdit.text()  
+    yt = pytube.YouTube(url) 
+    #144
+    if inicial.radioButton_5.isChecked():
+        video = yt.streams.get_by_itag(17)
+    #360
+    if inicial.radioButton.isChecked():
+        video = yt.streams.get_by_itag(18)
+    #480
+    if inicial.radioButton_3.isChecked():
+        video = yt.streams.get_by_itag(22)  
+    #720
+    if inicial.radioButton_2.isChecked():
+        video = yt.streams.get_by_itag(22)
+    #1080
+    if inicial.radioButton_4.isChecked():
+        video = yt.streams.get_by_itag(398)     
+    
+    else:
+        messagebox.showerror("Aviso","Resolução Informada Esta invalida!")
+    #video = yt.streams.get_by_resolution("720p")
+    home = os.path.expanduser('~')
+    
+    for i in tqdm(range(100)):
+        time.sleep(0.1)
         
-        for i in tqdm(range(100)):
-            time.sleep(0.1)
-            
-            
-        salva=video.download(os.path.join(home, 'Videos'))
-       
+    salva=video.download(os.path.join(home, 'Videos'))
+    
+    messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
+    #excpt :
+    #if url == (""):
+      #  messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
+   # else:
+       # messagebox.showerror("Aviso"," A URL ESTA INVALIDA,OU NAO FOI INFORMADA UMA RESOLUÇÃO!")
         
-        messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
-    except:
-        if url == (""):
-            messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
-        else:
-            messagebox.showerror("Aviso"," A URL ESTA INVALIDA!")
     
 
 def audio_download():
