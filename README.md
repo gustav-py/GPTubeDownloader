@@ -15,4 +15,6 @@ Este é um programa executavel em desenvolvimento com interface que faz download
 
 
 #ATENÇÃO
+
+
 - Este Programa ainda nao tem uma barra de progresso para o downloads, e ele ira aprensentar que nao esta respondendo, porem  por tras da interface ele esta fazendo o dowload do video corretamente, sendo assim é recomendado esperar o  download terminar, quando for concluido e programa ira  disparar um aviso de que o download foi concluido.
