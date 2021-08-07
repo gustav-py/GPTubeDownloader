@@ -19,6 +19,10 @@ from time import sleep
 import pytube
 import sys
 import mysql 
+from tkinter import *
+from tkinter.ttk import *
+import time
+
 # mostra as telas e aviso
 window = tkinter.Tk()
 # Oculta a main Window do tkinter
@@ -30,8 +34,9 @@ root.wm_withdraw()
   
     
 def video_download():
-    inicial.show()
+    
     try:
+        inicial.show()
         url = inicial.lineEdit.text()  
         yt = pytube.YouTube(url)
 
@@ -48,8 +53,11 @@ def video_download():
         if inicial.radioButton_4.isChecked():
             video = yt.streams.get_by_itag(22)     
         home = os.path.expanduser('~')
+        
         for i in tqdm(range(100)):
             time.sleep(0.1)
+    
+            
         salva=video.download(os.path.join(home, 'Videos'))
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
     except :
@@ -101,14 +109,19 @@ def playlist_download():
 
 def novo_download():
     inicial.lineEdit.setText("")
-   
+
+
+
+
+
 
 app = QtWidgets.QApplication([])  # FAZ O PYQT FUNCIONAR
 
 inicial = uic.loadUi("inicial.ui")  # carrega arquivo UI
 
 
-inicial.pushButton_2.clicked.connect(video_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
+#inicial.pushButton_2.clicked.connect(video_download)
+inicial.pushButton_2.clicked.connect(start)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton.clicked.connect(novo_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton_3.clicked.connect(audio_download)
 inicial.pushButton_4.clicked.connect(playlist_download)
@@ -118,3 +131,4 @@ inicial.show()
 
 app.exec()  # EXECUTA APLICAÇÃO
 root.mainloop()
+window.mainloop()
