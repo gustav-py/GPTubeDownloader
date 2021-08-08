@@ -47,7 +47,7 @@ def video_download():
             video = yt.streams.get_by_itag(22)
         elif inicial.radioButton_4.isChecked():
             video = yt.streams.get_by_itag(22)  
-
+      
         home = os.path.expanduser('~')
         #progresso()
         inicial.progressBar.setValue(10)
@@ -133,6 +133,8 @@ def novo_download():
 
 
 
+
+
 app = QtWidgets.QApplication([])  # FAZ O PYQT FUNCIONAR
 
 inicial = uic.loadUi("inicial.ui")  # carrega arquivo UI
@@ -142,6 +144,7 @@ inicial.pushButton_2.clicked.connect(video_download)
 inicial.pushButton.clicked.connect(novo_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton_3.clicked.connect(audio_download)
 inicial.pushButton_4.clicked.connect(playlist_download)
+inicial.pushButton_5.clicked.connect(playlist_download)
 #login1.pushButton.clicked.connect(Entra_Login)
 # MOSTRA O RPOGRAMA
 inicial.show()
