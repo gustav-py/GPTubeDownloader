@@ -1,28 +1,22 @@
-from logging import exception
-from sqlite3.dbapi2 import Cursor
+
+import pathlib
 import time
 from PyQt5 import uic, QtWidgets
 #from PyQt5
 import os
 from pathlib import Path
-from os import curdir, path
 import tkinter
 from tkinter import messagebox
 from PyQt5.QtCore import showbase
-from PyQt5.sip import simplewrapper
-from PyQt5.uic import properties
 from pytube import Playlist, YouTube
-import sqlite3
 from tkinter import *
-from tkinter import ttk
 from tqdm import tqdm
 from time import sleep
 import pytube
-import sys
-import mysql 
 from tkinter import *
 from tkinter.ttk import *
 import time
+#from barraprogress import progresso
 
 # mostra as telas e aviso
 window = tkinter.Tk()
@@ -35,7 +29,7 @@ root.wm_withdraw()
   
     
 def video_download():
-    
+    #barraprogresso.show()
 
     try:
         inicial.show()
@@ -46,30 +40,25 @@ def video_download():
         if inicial.radioButton_5.isChecked():
             video = yt.streams.get_by_itag(17)
         elif inicial.radioButton.isChecked():
-                video = yt.streams.get_by_itag(18)
+            video = yt.streams.get_by_itag(18)
         elif inicial.radioButton_3.isChecked():
-                video = yt.streams.get_by_itag(22)  
+            video = yt.streams.get_by_itag(22)  
         elif inicial.radioButton_2.isChecked():
-                video = yt.streams.get_by_itag(22)
+            video = yt.streams.get_by_itag(22)
         elif inicial.radioButton_4.isChecked():
             video = yt.streams.get_by_itag(22)  
 
         home = os.path.expanduser('~')
-        inicial.progressBar.setValue(10)
-        sleep(1)
-        inicial.progressBar.setValue(20)
-        sleep(1)
-        inicial.progressBar.setValue(30)
-        sleep(1)
-        inicial.progressBar.setValue(40)
-        sleep(1)
-        inicial.progressBar.setValue(100)
+        #progresso()
+        
         for i in tqdm(range(100)):
             time.sleep(0.1)
     
         salva=video.download(os.path.join(home, 'Videos'))
+        
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
-        inicial.progressBar.setValue(0)
+    #inicial.progressBar.setValue(0)
+    #barraprogresso.close()
     except :
         if url == (""):
             messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
@@ -79,6 +68,7 @@ def video_download():
     
 
 def audio_download():
+    
     try:
         url_audio = inicial.lineEdit.text()  # recebe o inpu do usuario que ira informar A URL
         yt = pytube.YouTube(url_audio)  # ira ler o input recebido
@@ -88,6 +78,9 @@ def audio_download():
     
             time.sleep(0.1)
             home = os.path.expanduser('~')
+            
+        for i in tqdm(range(100)):
+            time.sleep(0.1)
             salva=audio.download(os.path.join(home, 'Videos'))
         messagebox.showinfo("Status", f'                   Download do Audio  Concluido!!                                              \n SALVO EM : {salva}')
 
@@ -125,11 +118,17 @@ def novo_download():
 
 
 
+
+
+
+
+
+
 app = QtWidgets.QApplication([])  # FAZ O PYQT FUNCIONAR
 
 inicial = uic.loadUi("inicial.ui")  # carrega arquivo UI
 
-
+barraprogresso = uic.loadUi("barraprogresso.ui")
 inicial.pushButton_2.clicked.connect(video_download)
 inicial.pushButton.clicked.connect(novo_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton_3.clicked.connect(audio_download)

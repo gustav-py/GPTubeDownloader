@@ -39,18 +39,19 @@
    <string>Gp TubeDownloader</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="iconeprogram.qrc">
-    <normaloff>:/newPrefix/icone.png</normaloff>
-    <normalon>icone.png</normalon>
-    <disabledoff>icone.png</disabledoff>
-    <disabledon>icone.png</disabledon>
-    <activeoff>:/newPrefix/icone.png</activeoff>
-    <activeon>icone.png</activeon>
-    <selectedoff>icone.png</selectedoff>
-    <selectedon>icone.png</selectedon>:/newPrefix/icone.png</iconset>
+   <iconset>
+    <normaloff>miniicoone.png</normaloff>
+    <normalon>miniicoone.png</normalon>
+    <disabledoff>miniicoone.png</disabledoff>
+    <disabledon>miniicoone.png</disabledon>
+    <activeoff>miniicoone.png</activeoff>
+    <activeon>miniicoone.png</activeon>
+    <selectedoff>miniicoone.png</selectedoff>
+    <selectedon>miniicoone.png</selectedon>miniicoone.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(25, 25, 25);
+background-color: rgb(103, 103, 103);
 background-color: rgb(255, 255, 255);
 background-color: rgb(255, 255, 255);</string>
   </property>
@@ -93,11 +94,13 @@ background-color: rgb(255, 255, 255);</string>
       <weight>75</weight>
       <italic>true</italic>
       <bold>true</bold>
+      <strikeout>false</strikeout>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>Informe a URL do video : </string>
@@ -112,8 +115,21 @@ background-color: rgb(159, 159, 159);</string>
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>Novo Download</string>
@@ -132,7 +148,7 @@ background-color: rgb(159, 159, 159);</string>
      <font>
       <pointsize>10</pointsize>
       <weight>75</weight>
-      <italic>true</italic>
+      <italic>false</italic>
       <bold>true</bold>
       <underline>false</underline>
      </font>
@@ -159,8 +175,9 @@ background-color: rgb(159, 159, 159);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(236, 0, 0);
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>Baixar Video</string>
@@ -193,8 +210,9 @@ background-color: rgb(159, 159, 159);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(236, 0, 0);
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>Baixar Audio</string>
@@ -223,8 +241,9 @@ background-color: rgb(159, 159, 159);</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(236, 0, 0);
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string extracomment="GG">Baixar Playlist</string>
@@ -264,12 +283,12 @@ background-color: rgb(159, 159, 159);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(25, 25, 25);
-background-color: rgb(255, 255, 255);
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Versão 1.1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Versão 1.1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -285,19 +304,18 @@ background-color: rgb(159, 159, 159);</string>
      <font>
       <family>MS Shell Dlg 2</family>
       <pointsize>8</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(25, 25, 25);
-background-color: rgb(255, 255, 255);
-font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic; color:#ff0000;&quot;&gt;Dev: Gustavo Pinheiro &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Dev: Gustavo Pinheiro &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -310,35 +328,14 @@ background-color: rgb(159, 159, 159);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
      <pixmap>logobandeira.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>-20</x>
-      <y>-10</y>
-      <width>1461</width>
-      <height>861</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>logonova.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -358,8 +355,9 @@ background-color: rgb(159, 159, 159);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>Selecione uma Resolução :</string>
@@ -377,11 +375,14 @@ background-color: rgb(159, 159, 159);</string>
     <property name="font">
      <font>
       <weight>75</weight>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>360p</string>
@@ -399,11 +400,14 @@ background-color: rgb(159, 159, 159);</string>
     <property name="font">
      <font>
       <weight>75</weight>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>720p</string>
@@ -421,11 +425,14 @@ background-color: rgb(159, 159, 159);</string>
     <property name="font">
      <font>
       <weight>75</weight>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>480p</string>
@@ -443,11 +450,14 @@ background-color: rgb(159, 159, 159);</string>
     <property name="font">
      <font>
       <weight>75</weight>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>1080p</string>
@@ -465,32 +475,39 @@ background-color: rgb(159, 159, 159);</string>
     <property name="font">
      <font>
       <weight>75</weight>
+      <italic>true</italic>
       <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="text">
      <string>144p</string>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>360</y>
-      <width>118</width>
-      <height>23</height>
+      <x>0</x>
+      <y>0</y>
+      <width>731</width>
+      <height>521</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(159, 159, 159);</string>
+     <string notr="true">background-color: rgb(41, 0, 122);
+background-color: rgb(83, 0, 125);</string>
     </property>
-    <property name="value">
-     <number>0</number>
+    <property name="text">
+     <string/>
     </property>
-    <property name="textVisible">
+    <property name="pixmap">
+     <pixmap>Gptubefundo.png</pixmap>
+    </property>
+    <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
@@ -510,24 +527,13 @@ background-color: rgb(159, 159, 159);</string>
    <zorder>radioButton_3</zorder>
    <zorder>radioButton_4</zorder>
    <zorder>radioButton_5</zorder>
-   <zorder>progressBar</zorder>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>722</width>
-     <height>21</height>
-    </rect>
-   </property>
   </widget>
  </widget>
  <pixmapfunction>corpng.</pixmapfunction>
  <resources>
-  <include location="teste.qrc"/>
   <include location="logosoft.qrc"/>
   <include location="iconeprogram.qrc"/>
+  <include location="iconefundo.qrc"/>
  </resources>
  <connections/>
  <designerdata>
