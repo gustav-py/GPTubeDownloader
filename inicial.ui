@@ -99,6 +99,8 @@ background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(41, 0, 122);
+background-color: rgb(95, 0, 143);
+background-color: rgb(99, 0, 148);
 color: rgb(255, 255, 255);
 background-color: rgb(83, 0, 125);</string>
     </property>
@@ -285,7 +287,8 @@ background-color: rgb(83, 0, 125);</string>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(41, 0, 122);
 color: rgb(255, 255, 255);
-background-color: rgb(83, 0, 125);</string>
+background-color: rgb(83, 0, 125);
+background-color: rgb(55, 0, 83);</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Versão 1.1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -312,7 +315,8 @@ background-color: rgb(83, 0, 125);</string>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(41, 0, 122);
 color: rgb(255, 255, 255);
-background-color: rgb(83, 0, 125);</string>
+background-color: rgb(83, 0, 125);
+background-color: rgb(55, 0, 83);</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Dev: Gustavo Pinheiro &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -329,7 +333,9 @@ background-color: rgb(83, 0, 125);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(41, 0, 122);
-background-color: rgb(83, 0, 125);</string>
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);
+background-color: rgb(55, 0, 83);</string>
     </property>
     <property name="text">
      <string/>
@@ -511,6 +517,32 @@ background-color: rgb(83, 0, 125);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>470</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(41, 0, 122);
+background-color: rgb(49, 0, 74);
+color: rgb(255, 255, 255);
+background-color: rgb(83, 0, 125);
+background-color: rgb(55, 0, 83);</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>true</bool>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+   </widget>
    <zorder>label_5</zorder>
    <zorder>label</zorder>
    <zorder>pushButton</zorder>
@@ -527,6 +559,7 @@ background-color: rgb(83, 0, 125);</string>
    <zorder>radioButton_3</zorder>
    <zorder>radioButton_4</zorder>
    <zorder>radioButton_5</zorder>
+   <zorder>progressBar</zorder>
   </widget>
  </widget>
  <pixmapfunction>corpng.</pixmapfunction>

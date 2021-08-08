@@ -50,6 +50,15 @@ def video_download():
 
         home = os.path.expanduser('~')
         #progresso()
+        inicial.progressBar.setValue(10)
+        sleep(1)
+        inicial.progressBar.setValue(20)
+        sleep(1)
+        inicial.progressBar.setValue(30)
+        sleep(1)
+        inicial.progressBar.setValue(40)
+        sleep(1)
+        inicial.progressBar.setValue(100)
         
         for i in tqdm(range(100)):
             time.sleep(0.1)
@@ -57,7 +66,7 @@ def video_download():
         salva=video.download(os.path.join(home, 'Videos'))
         
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
-    #inicial.progressBar.setValue(0)
+        inicial.progressBar.setValue(0)
     #barraprogresso.close()
     except :
         if url == (""):
@@ -128,7 +137,7 @@ app = QtWidgets.QApplication([])  # FAZ O PYQT FUNCIONAR
 
 inicial = uic.loadUi("inicial.ui")  # carrega arquivo UI
 
-barraprogresso = uic.loadUi("barraprogresso.ui")
+#barraprogresso = uic.loadUi("barraprogresso.ui")
 inicial.pushButton_2.clicked.connect(video_download)
 inicial.pushButton.clicked.connect(novo_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton_3.clicked.connect(audio_download)
