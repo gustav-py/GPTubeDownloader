@@ -475,6 +475,25 @@ background-color: rgb(159, 159, 159);</string>
      <string>144p</string>
     </property>
    </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>360</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(159, 159, 159);</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>label_5</zorder>
    <zorder>label</zorder>
    <zorder>pushButton</zorder>
@@ -491,6 +510,7 @@ background-color: rgb(159, 159, 159);</string>
    <zorder>radioButton_3</zorder>
    <zorder>radioButton_4</zorder>
    <zorder>radioButton_5</zorder>
+   <zorder>progressBar</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

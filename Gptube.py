@@ -9,6 +9,7 @@ from os import curdir, path
 import tkinter
 from tkinter import messagebox
 from PyQt5.QtCore import showbase
+from PyQt5.sip import simplewrapper
 from PyQt5.uic import properties
 from pytube import Playlist, YouTube
 import sqlite3
@@ -35,31 +36,40 @@ root.wm_withdraw()
     
 def video_download():
     
+
     try:
         inicial.show()
         url = inicial.lineEdit.text()  
         yt = pytube.YouTube(url)
-
+        
+        
         if inicial.radioButton_5.isChecked():
             video = yt.streams.get_by_itag(17)
-
-        if inicial.radioButton.isChecked():
-            video = yt.streams.get_by_itag(18)
-
-        if inicial.radioButton_3.isChecked():
+        elif inicial.radioButton.isChecked():
+                video = yt.streams.get_by_itag(18)
+        elif inicial.radioButton_3.isChecked():
+                video = yt.streams.get_by_itag(22)  
+        elif inicial.radioButton_2.isChecked():
+                video = yt.streams.get_by_itag(22)
+        elif inicial.radioButton_4.isChecked():
             video = yt.streams.get_by_itag(22)  
-        if inicial.radioButton_2.isChecked():
-            video = yt.streams.get_by_itag(22)
-        if inicial.radioButton_4.isChecked():
-            video = yt.streams.get_by_itag(22)     
+
         home = os.path.expanduser('~')
-        
+        inicial.progressBar.setValue(10)
+        sleep(1)
+        inicial.progressBar.setValue(20)
+        sleep(1)
+        inicial.progressBar.setValue(30)
+        sleep(1)
+        inicial.progressBar.setValue(40)
+        sleep(1)
+        inicial.progressBar.setValue(100)
         for i in tqdm(range(100)):
             time.sleep(0.1)
     
-            
         salva=video.download(os.path.join(home, 'Videos'))
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
+        inicial.progressBar.setValue(0)
     except :
         if url == (""):
             messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
@@ -120,8 +130,7 @@ app = QtWidgets.QApplication([])  # FAZ O PYQT FUNCIONAR
 inicial = uic.loadUi("inicial.ui")  # carrega arquivo UI
 
 
-#inicial.pushButton_2.clicked.connect(video_download)
-inicial.pushButton_2.clicked.connect(start)  # quando o campo pusubutton receber um clique ele ira fazer o download
+inicial.pushButton_2.clicked.connect(video_download)
 inicial.pushButton.clicked.connect(novo_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton_3.clicked.connect(audio_download)
 inicial.pushButton_4.clicked.connect(playlist_download)
