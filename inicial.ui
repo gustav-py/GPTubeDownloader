@@ -111,9 +111,9 @@ background-color: rgb(83, 0, 125);</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>660</x>
+      <x>580</x>
       <y>180</y>
-      <width>51</width>
+      <width>71</width>
       <height>21</height>
      </rect>
     </property>
@@ -543,31 +543,6 @@ background-color: rgb(55, 0, 83);</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>180</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <italic>true</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(41, 0, 122);
-color: rgb(255, 255, 255);
-background-color: rgb(83, 0, 125);</string>
-    </property>
-    <property name="text">
-     <string>Browse</string>
-    </property>
-   </widget>
    <zorder>label_5</zorder>
    <zorder>label</zorder>
    <zorder>pushButton</zorder>
@@ -585,7 +560,6 @@ background-color: rgb(83, 0, 125);</string>
    <zorder>radioButton_4</zorder>
    <zorder>radioButton_5</zorder>
    <zorder>progressBar</zorder>
-   <zorder>pushButton_5</zorder>
   </widget>
  </widget>
  <pixmapfunction>corpng.</pixmapfunction>
