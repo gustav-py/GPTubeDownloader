@@ -57,7 +57,7 @@ def video_download():
         inicial.progressBar.setValue(30)
         sleep(1)
         inicial.progressBar.setValue(40)
-        sleep(1)
+        sleep(0.8)
         inicial.progressBar.setValue(100)
         
         for i in tqdm(range(100)):
