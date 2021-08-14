@@ -16,7 +16,7 @@ import pytube
 from tkinter import *
 from tkinter.ttk import *
 import time
-#from barraprogress import progresso
+import threading
 
 # mostra as telas e aviso
 window = tkinter.Tk()
@@ -35,8 +35,8 @@ def video_download():
         inicial.show()
         url = inicial.lineEdit.text()  
         yt = pytube.YouTube(url)
-        
-        
+        inicial.label_7.close()
+        inicial.progressBar.show()
         if inicial.radioButton_5.isChecked():
             video = yt.streams.get_by_itag(17)
         elif inicial.radioButton.isChecked():
@@ -47,9 +47,11 @@ def video_download():
             video = yt.streams.get_by_itag(22)
         elif inicial.radioButton_4.isChecked():
             video = yt.streams.get_by_itag(22)  
-      
+        else:
+            messagebox.showerror("Aviso"," OU NAO FOI INFORMADA UMA RESOLUÇÃO!")
         home = os.path.expanduser('~')
         #progresso()
+        
         inicial.progressBar.setValue(10)
         sleep(1)
         inicial.progressBar.setValue(20)
@@ -59,22 +61,28 @@ def video_download():
         inicial.progressBar.setValue(40)
         sleep(0.8)
         inicial.progressBar.setValue(100)
-        
+        inicial.label_7.show()
         for i in tqdm(range(100)):
             time.sleep(0.1)
+
     
+
+       
         salva=video.download(os.path.join(home, 'Videos'))
         
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
         inicial.progressBar.setValue(0)
+        inicial.progressBar.close()
     #barraprogresso.close()
     except :
         if url == (""):
             messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
         else:
-            messagebox.showerror("Aviso"," A URL ESTA INVALIDA,OU NAO FOI INFORMADA UMA RESOLUÇÃO!")
+             messagebox.showerror("Aviso","URL INVALIDA!")
+
+        
     
-    
+
 
 def audio_download():
     
@@ -144,7 +152,7 @@ inicial.pushButton_2.clicked.connect(video_download)
 inicial.pushButton.clicked.connect(novo_download)  # quando o campo pusubutton receber um clique ele ira fazer o download
 inicial.pushButton_3.clicked.connect(audio_download)
 inicial.pushButton_4.clicked.connect(playlist_download)
-inicial.pushButton_5.clicked.connect(playlist_download)
+#inicial.pushButton_5.clicked.connect(playlist_download)
 #login1.pushButton.clicked.connect(Entra_Login)
 # MOSTRA O RPOGRAMA
 inicial.show()
