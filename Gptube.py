@@ -1,4 +1,3 @@
-
 import pathlib
 import time
 from PyQt5 import uic, QtWidgets
@@ -10,6 +9,7 @@ from tkinter import messagebox
 from PyQt5.QtCore import showbase
 from pytube import Playlist, YouTube
 from tkinter import *
+from pytube.extract import video_id
 from tqdm import tqdm
 from time import sleep
 import pytube
@@ -17,6 +17,10 @@ from tkinter import *
 from tkinter.ttk import *
 import time
 import threading
+import  mysql 
+from  sqlite3 . dbapi2  import  Cursor
+import  sqlite3
+import  mysql.connector
 
 # mostra as telas e aviso
 window = tkinter.Tk()
@@ -29,13 +33,15 @@ root.wm_withdraw()
   
     
 def video_download():
+    
     #barraprogresso.show()
 
     try:
+        
         inicial.show()
-        url = inicial.lineEdit.text()  
+        url=inicial.lineEdit.text()
         yt = pytube.YouTube(url)
-        inicial.label_7.close()
+
         inicial.progressBar.show()
         if inicial.radioButton_5.isChecked():
             video = yt.streams.get_by_itag(17)
@@ -61,7 +67,6 @@ def video_download():
         inicial.progressBar.setValue(40)
         sleep(0.8)
         inicial.progressBar.setValue(100)
-        inicial.label_7.show()
         for i in tqdm(range(100)):
             time.sleep(0.1)
 
@@ -71,14 +76,18 @@ def video_download():
         salva=video.download(os.path.join(home, 'Videos'))
         
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
-        inicial.progressBar.setValue(0)
+        #inicial.progressBar.setValue(0)
         inicial.progressBar.close()
     #barraprogresso.close()
-    except :
+   
+    #except ValueError as erro :
+    except:
+        
         if url == (""):
             messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
         else:
              messagebox.showerror("Aviso","URL INVALIDA!")
+        
 
         
     
