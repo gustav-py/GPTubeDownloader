@@ -34,9 +34,9 @@ root.wm_withdraw()
     
 def video_download():
     
-    #barraprogresso.show()
+    
 
-    #try:
+    try:
         
         inicial.show()
         url=inicial.lineEdit.text()
@@ -70,15 +70,14 @@ def video_download():
         messagebox.showinfo("Status", f'                   Download do Video Concluido!!                                              \n SALVO EM : {salva}')
         #inicial.progressBar.setValue(0)
         inicial.progressBar.close()
-    #barraprogresso.close()
-   
-    #except ValueError as erro :
-   # except:
         
-      #  if url == (""):
-        #    messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
-       # else:
-        #     messagebox.showerror("Aviso","URL INVALIDA!")
+   
+    
+    except:
+        if url == (""):
+            messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
+        else:
+             messagebox.showerror("Aviso","URL INVALIDA!")
         
 
         
