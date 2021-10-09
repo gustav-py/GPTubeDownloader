@@ -36,7 +36,7 @@ def video_download():
     
     #barraprogresso.show()
 
-    try:
+    #try:
         
         inicial.show()
         url=inicial.lineEdit.text()
@@ -58,15 +58,7 @@ def video_download():
         home = os.path.expanduser('~')
         #progresso()
         
-        inicial.progressBar.setValue(10)
-        sleep(1)
-        inicial.progressBar.setValue(20)
-        sleep(1)
-        inicial.progressBar.setValue(30)
-        sleep(1)
-        inicial.progressBar.setValue(40)
-        sleep(0.8)
-        inicial.progressBar.setValue(100)
+        
         for i in tqdm(range(100)):
             time.sleep(0.1)
 
@@ -81,12 +73,12 @@ def video_download():
     #barraprogresso.close()
    
     #except ValueError as erro :
-    except:
+   # except:
         
-        if url == (""):
-            messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
-        else:
-             messagebox.showerror("Aviso","URL INVALIDA!")
+      #  if url == (""):
+        #    messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
+       # else:
+        #     messagebox.showerror("Aviso","URL INVALIDA!")
         
 
         
@@ -95,7 +87,7 @@ def video_download():
 
 def audio_download():
     
-    try:
+    #try:
         url_audio = inicial.lineEdit.text()  # recebe o inpu do usuario que ira informar A URL
         yt = pytube.YouTube(url_audio)  # ira ler o input recebido
         audio = yt.streams.filter(only_audio=True).first()
@@ -110,19 +102,22 @@ def audio_download():
             salva=audio.download(os.path.join(home, 'Videos'))
         messagebox.showinfo("Status", f'                   Download do Audio  Concluido!!                                              \n SALVO EM : {salva}')
 
-    except:
-        if url_audio==(""):
-            messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
-        else:
-            messagebox.showerror("Aviso","URL INVALIDA!")
+    #except:
+        #if url_audio==(""):
+          #  messagebox.showerror("Aviso","O CAMPO DA URL ESTA VAZIO!")
+       # else:
+          #  messagebox.showerror("Aviso","URL INVALIDA!")
 
 
 def playlist_download():
     try:
         playlist_urls = inicial.lineEdit.text()  # recebe o inpu do usuario que ira informar A URL
         playlist = Playlist(playlist_urls)
+
+      
         for url in playlist:
             video = YouTube(url)
+            
             stream = video.streams.first()
             #print(video.title)
             home = os.path.expanduser('~')
@@ -140,8 +135,23 @@ def novo_download():
     inicial.lineEdit.setText("")
 
 
+def carregab():
+    inicial.progressBar.setValue(10)
+    sleep(1)
+    inicial.progressBar.setValue(20)
+    sleep(1)
+    inicial.progressBar.setValue(30)
+    sleep(1)
+    inicial.progressBar.setValue(40)
+    sleep(0.8)
+    inicial.progressBar.setValue(100)
 
 
+#carrega=threading.Thread(target=carregab)
+#carrega.start()
+
+#carregavideo=threading.Thread(target=video_download)
+#carregavideo.start()
 
 
 
